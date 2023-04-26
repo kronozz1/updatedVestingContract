@@ -370,7 +370,7 @@ renderLinksTenTimes();
   <li >{new Date(timestamp * 1000).toLocaleString()}</li>
       </>
 ))}
-    { !date ?
+    { date ?
                     <li>{new Date(date.getTime()).toLocaleString()}</li>
 
         :
