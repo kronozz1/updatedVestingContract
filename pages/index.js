@@ -118,14 +118,16 @@ const renderAmount =  () =>{
   for (let i = 0; i < userMonths; i++) {
     links.push(<a className="mb-[]" key={i}>{userAmount} <br/></a>);
   }
-  return <div>
+  return(
+    <>
     <div>
     {links}
   </div>
 <div>
     {lastuserAmount}
     </div>
-    </div>;
+    </>
+  ) ;
 
 }
 const renderClaim = async() =>{
@@ -352,7 +354,7 @@ renderLinksTenTimes();
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
       <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Amount</h2>
       <nav class="list-none mb-10">
-  <li >    {renderAmount()}
+  <li>    {renderAmount()}
 </li>
 
 
@@ -362,7 +364,7 @@ renderLinksTenTimes();
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Claim Date</h2>
         <nav class="list-none mb-10">
-        <li>
+    <div>
     {myArray1.map((timestamp, index) => (
       <>
   <li >{new Date(timestamp * 1000).toLocaleString()}</li>
@@ -378,13 +380,13 @@ renderLinksTenTimes();
     }
 
 
-        </li>
+        </div>
       </nav>
     </div>
       <div class="lg:w-1/4 md:w-1/2 w-full px-4">
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Action</h2>
         <nav class="list-none mb-10">
-          <li>
+    <div>
     {myArray.map((value, index) => (
       <>
       { !value == true ?
@@ -402,7 +404,7 @@ Claimed
       </>
         ))}
 
-          </li>
+    </div>
           { lastuserAmount ?
       <button onClick={claimlastMoney} class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-0 px-4 border border-blue-500 hover:border-transparent rounded">
   Claim
