@@ -72,7 +72,7 @@ const [ userallowance , setuserallowance] = React.useState(false);
       const mon = tx.totalmonths;
             const formattedValue3 = (parseFloat(mon) * 1).toFixed(0);
       setuserMonths(formattedValue3);
-      setlastuserAmount(tx4);
+      setlastused(tx4);
             setuserAmount(amount);
       setlastuserAmount(amount2);
 
@@ -370,7 +370,7 @@ renderLinksTenTimes();
   <li >{new Date(timestamp * 1000).toLocaleString()}</li>
       </>
 ))}
-    { date ?
+    { lastTimestamp ?
                     <li>{new Date(date.getTime()).toLocaleString()}</li>
 
         :
@@ -405,7 +405,7 @@ Claimed
         ))}
 
     </div>
-          { lastuserAmount ?
+          { userAmount > 0 ?
       <button onClick={claimlastMoney} class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-0 px-4 border border-blue-500 hover:border-transparent rounded">
   Claim
 </button>
